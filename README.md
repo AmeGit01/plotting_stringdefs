@@ -44,3 +44,33 @@ chmod +x src/plot_file.jl
 ````
 
 ## Windows OS
+
+In this case it is necessary to run the script typing
+
+````
+python BMv**NodestringResults.py
+````
+
+Now the csv_files/ is filled by the csv files, then run
+
+````
+julia --project=@. src/plot_file.jl
+````
+
+
+# Final notes
+Tt could be necessary to install the h5py package if not already done: 
+
+````
+python -m pip install h5py
+````
+
+It is necessary to have python and julia installed to use the tool.  
+
+To use the julia script you must have both the project.toml and manifest.toml files into the working directory. The project.toml file is downloaded cloning the repository, the manifest bust be created entering the REPL mode and performing the instantiate command, typing 
+````
+julia 
+julia>  altgr + ]
+pkg>    activate .
+pkg>    instantiate
+````
