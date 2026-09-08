@@ -26,12 +26,14 @@ function plot_df(df::DataFrame, filename::AbstractString)
 end
 
 function main()
-    files = glob("*.csv")
+    files = glob("csv_files/*.csv")
     println("Found $(length(files)) CSV files:", files)
 
     for file ∈ files
+        index = collect(findlast("/", file))
+        filename = file[index[end]+1:end]
         df = CSV.read(file, DataFrame)
-        plt, name = plot_df(df, file)
+        plt, name = plot_df(df, filename)
         outpath = joinpath("images", "$(name).png")
         savefig(plt, outpath)
     end
