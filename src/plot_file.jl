@@ -26,9 +26,9 @@ function plot_df(df::DataFrame, filename::AbstractString)
 end
 
 function main()
-    files = glob(joinpath("csv_files","*.csv"))
+    files = glob(joinpath("csv_files/*.csv"))
     println("Found $(length(files)) CSV files:", files)
-
+    @infiltrate false
     for file ∈ files
         # index = collect(findlast("\\", file))
         # filename = file[index[end]+1:end]
