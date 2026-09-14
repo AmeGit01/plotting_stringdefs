@@ -1,5 +1,7 @@
 # plotting_stringdefs
-This script is used for automatically plots some variables saved for BASEMENT stringdefs.  
+This script is used for automatically plots some variables saved for BASEMENT stringdefs.
+
+In the future il will contain also the script for plotting the statistics of the mesh, so that an unique folder contains all the tool developed by Amedeo Repele and Matteo Nicolini for analyzing basement meshes.
 
 This script need to be used in combination with the python script provided by ETHZ, available at the link https://basement.ethz.ch/download/tools/python-scripts.html, taking care of selecting the script for the correct BASEMENT version, under the voice "Extract Nodestrings (Stringdefs) results from a BASEMENT result container (result.h5)".  Note that the original python script from ETHZ is built to read and write file in the same folder the script is located, the version present here is writing its outputs into "csv_files/" folder for keeping the workspace clearer instead.  
 
