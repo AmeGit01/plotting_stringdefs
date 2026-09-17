@@ -46,8 +46,15 @@ function main_custom()
 	# Select columns
 	println("Select columns to be plotted (ex. 2 5 6):")
 	input = readline()
-	@assert !isempty(input) "No column selected, execution interrupted!"
-	DatasetsToPlot = parse.(Int64, split(input)) # [8, 9]
+
+	if isempty(input) 
+		println("No column selected, all columns will be plotted!!")
+		Nall = length(Cols)
+		DatasetsToPlot = collect(2:1:Nall)
+		@infiltrate
+	else
+		DatasetsToPlot = parse.(Int64, split(input)) # [8, 9]
+	end
 
 	# transform seconds to hours
 	xh = df[:, 1] ./ 3600
